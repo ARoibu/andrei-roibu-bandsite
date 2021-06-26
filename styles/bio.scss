@@ -1,0 +1,181 @@
+@font-face {
+    font-family: Avenir;
+    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+    font-family: Avenir600;
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+    font-family: Avenir700;
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+
+$primary-color1: #323232;
+$primary-color2: #AFAFAF;
+$primary-color3: #FFFFFF;
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-align-center{
+    display: flex;
+    align-items: center;
+}
+@mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Avenir;
+}
+h1{
+    font-size: 24px;
+    line-height: 32px;
+    
+}
+h2{
+    font-size: 24px;
+    line-height: 32px;
+    
+}
+h3{
+    font-size: 13px;
+    line-height: 22px;
+    font-family: Avenir600;
+}
+p{
+    font-size: 13px;
+    line-height: 18px;
+    
+}
+li{
+    font-size: 13px;
+}
+
+
+.nav{
+    background-color: $primary-color1;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__logo{
+        @include flex-center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        width: 100%
+    }
+    &__list{
+        @include flex-center;
+        color: $primary-color3;
+        list-style: none;
+        width: 100%;
+        
+
+        &--active{
+            border-bottom: 4px solid $primary-color3;
+            width: 50%;
+            text-align: center;
+            padding-bottom: 16px;
+            font-weight: 700;
+        }
+        &--inactive{
+            width: 50%;
+            text-align: center;
+            color: $primary-color2;
+        }
+    }
+
+}
+
+.hero{
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 60vw;
+    padding-left: 16px;
+    margin-bottom: 24px;
+    @include flex-align-center;
+    color: $primary-color3;
+}
+
+.about{
+
+    &__heading{
+        padding-bottom: 16px;
+        padding-left: 16px;
+        font-family: Avenir600;
+        color: $primary-color1;
+    }
+    &__photo{
+        padding: 0 16px 16px 16px;
+        width: 100%;
+        height: 50vw;
+    }
+    &__text{
+        padding-left: 16px;
+        padding-bottom: 16px;
+        padding-right: 16px;
+        width: 100%;
+        color: $primary-color1;
+
+        &--quote{
+            font-family: Avenir600;
+            line-height: 22px;
+        }
+    }
+}
+
+.gallery{
+    &__heading{
+        padding-bottom: 16px;
+        padding-left: 16px;
+        color: $primary-color1;
+    }
+    &__images{
+        padding-left: 16px;
+        padding-bottom: 16px;
+        padding-right: 16px;
+        width: 100%;
+    }
+}
+
+.footer{
+    background-color: $primary-color1;
+    &__heading{
+        padding-left: 16px;
+        padding-top: 24px;
+        padding-bottom: 16px;
+        color: $primary-color3;
+    }
+    &__text{
+        padding-left: 16px;
+        width: 100%;
+        padding-bottom: 16px;
+        color: $primary-color3;
+        &--small{
+            font-size: 10px;
+        }
+        &--silver{
+            color: #e1e1e1;
+        }
+    }
+    &__icons{
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+        padding-left: 16px;
+        padding-bottom: 24px;
+    }
+    &__logo{
+        margin-left: 16px;
+        margin-bottom: 16px;
+        margin-top: 40px;
+        max-width: 120px;
+        max-height: 20px;
+    }
+}
