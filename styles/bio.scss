@@ -15,6 +15,20 @@ $primary-color1: #323232;
 $primary-color2: #AFAFAF;
 $primary-color3: #FFFFFF;
 
+$tablet-width: 767px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+        @content;
+    }   
+}
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }  
+}
+
 @mixin flex-center{
     display: flex;
     justify-content: center;
@@ -36,17 +50,31 @@ $primary-color3: #FFFFFF;
 h1{
     font-size: 24px;
     line-height: 32px;
+    @include tablet{
+        font-size: 60px;
+        line-height: 68px;
+
+    }
     
 }
 h2{
     font-size: 24px;
     line-height: 32px;
+    @include tablet{
+        font-size: 36px;
+        line-height: 44px;
+    }
     
 }
 h3{
-    font-size: 13px;
+    font-size: 14px;
     line-height: 22px;
-    font-family: Avenir600;
+    // color: black;
+    @include tablet{
+        font-size: 24px;
+        line-height: 32px;
+    }
+    // font-family: Avenir600;
 }
 p{
     font-size: 13px;
@@ -67,13 +95,28 @@ li{
         @include flex-center;
         padding-top: 16px;
         padding-bottom: 16px;
-        width: 100%
+        width: 100%;
+        @include tablet{
+            justify-content: left;
+            align-items: center;
+            max-width: 120px;
+            padding-left: 36px;
+            padding-top: 24px
+            
+        }
     }
     &__list{
         @include flex-center;
         color: $primary-color3;
         list-style: none;
         width: 100%;
+        @include tablet{
+            // justify-content: left;
+            // align-items: center;
+            width: 200px;
+            margin-left: 80px;
+            padding-top: 24px;
+        }
         
 
         &--active{
@@ -82,11 +125,23 @@ li{
             text-align: center;
             padding-bottom: 16px;
             font-weight: 700;
+            @include tablet{
+                width: fit-content;
+                margin-right: 60px;
+            }
         }
         &--inactive{
             width: 50%;
             text-align: center;
             color: $primary-color2;
+            @include tablet{
+                width: fit-content;
+            }
+            &:hover{
+                color: $primary-color3;
+                padding-bottom: 16px;
+                border-bottom: 4px solid $primary-color3;
+            }
         }
     }
 
@@ -101,6 +156,9 @@ li{
     margin-bottom: 24px;
     @include flex-align-center;
     color: $primary-color3;
+    @include tablet{
+        padding-left: 32px;
+    }
 }
 
 .about{
@@ -110,37 +168,95 @@ li{
         padding-left: 16px;
         font-family: Avenir600;
         color: $primary-color1;
+        @include tablet{
+            padding-left: 32px;
+            padding-top: 32px;
+            padding-bottom: 24px;
+        }
     }
     &__photo{
         padding: 0 16px 16px 16px;
         width: 100%;
         height: 50vw;
+        @include tablet{
+            padding-left: 100px;
+            padding-right: 100px;
+        }
     }
     &__text{
         padding-left: 16px;
         padding-bottom: 16px;
         padding-right: 16px;
         width: 100%;
+        line-height: 24px;
         color: $primary-color1;
+        &--column{
+            @include tablet{
+            display: flex;
+            justify-content: space-between;
+            padding-left: 84px;
+            padding-right: 84px;
+            }
+        }
+        &--black{
+            color: black;
+            font-family: Avenir600;
+            @include tablet{
+            padding-left: 100px;
+            padding-top: 32px;
+            }
+        }
+        // @include tablet{
+        //     padding-left: 100px;
+        //     padding-right: 100px;
+        // }
 
         &--quote{
             font-family: Avenir600;
-            line-height: 22px;
+            line-height: 32px;
+            font-size: 16px;    
+            @include tablet{
+            padding-left: 100px;
+            padding-right: 100px;
+            }
+            }
+        &--big{
+            @include tablet{
+                font-size: 22px;
+            }
+            
         }
+        
     }
 }
 
 .gallery{
+    @include tablet{
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 32px;
+        padding-right: 8px;
+    }
     &__heading{
         padding-bottom: 16px;
         padding-left: 16px;
         color: $primary-color1;
+        font-family: Avenir600;
+        @include tablet{
+            padding-left: 32px;
+        }
     }
     &__images{
         padding-left: 16px;
         padding-bottom: 16px;
         padding-right: 16px;
         width: 100%;
+        @include tablet{
+            width: 33.33%;
+            padding-right: 24px;
+            padding-left: 0;
+            padding-bottom: 24px;
+        }
     }
 }
 
@@ -151,6 +267,9 @@ li{
         padding-top: 24px;
         padding-bottom: 16px;
         color: $primary-color3;
+        // @include tablet{
+        //     padding-left: 36px;
+        // }
     }
     &__text{
         padding-left: 16px;
@@ -167,7 +286,7 @@ li{
     &__icons{
         display: flex;
         justify-content: space-between;
-        width: 45%;
+        width: 140px;
         padding-left: 16px;
         padding-bottom: 24px;
     }
