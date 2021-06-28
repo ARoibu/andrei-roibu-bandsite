@@ -1,46 +1,5 @@
-@font-face {
-    font-family: Avenir;
-    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
-}
-@font-face {
-    font-family: Avenir600;
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
-}
-@font-face {
-    font-family: Avenir700;
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
-}
+@import "partials/partial";
 
-$primary-color1: #323232;
-$primary-color2: #AFAFAF;
-$primary-color3: #FFFFFF;
-
-$tablet-width: 767px;
-$desktop-width: 1280px;
-
-@mixin tablet {
-    @media (min-width: $tablet-width) {
-        @content;
-    }   
-}
-@mixin desktop {
-    @media (min-width: $desktop-width) {
-        @content;
-    }  
-}
-
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-}
-@mixin flex-align-center{
-    display: flex;
-    align-items: center;
-}
-@mixin flex-around{
-    display: flex;
-    justify-content: space-around;
-}
 * {
     padding: 0;
     margin: 0;
@@ -116,6 +75,8 @@ li{
         }
         @include desktop{
             padding-left: auto;
+            padding-bottom: 24px;
+            padding-top: 36px;
         }
     }
     &__list{
@@ -130,6 +91,9 @@ li{
             margin-left: 80px;
             padding-top: 24px;
         }
+        @include desktop{
+            padding-top: 40px;
+        }
         
 
         &--active{
@@ -141,6 +105,10 @@ li{
             @include tablet{
                 width: fit-content;
                 margin-right: 60px;
+            }
+            @include desktop{
+                border-bottom: 2px solid $primary-color3;
+                
             }
         }
         &--inactive{
@@ -154,6 +122,9 @@ li{
                 color: $primary-color3;
                 padding-bottom: 16px;
                 border-bottom: 4px solid $primary-color3;
+                @include desktop{
+                    border-bottom: 2px solid $primary-color3;
+                }
             }
         }
     }
@@ -161,25 +132,38 @@ li{
 }
 
 .hero{
-    background-image: url(../assets/images/hero-bio.jpg);
-    background-position: center;
-    background-size: cover;
+    
     height: 60vw;
     padding-left: 16px;
     margin-bottom: 24px;
     @include flex-align-center;
     color: $primary-color3;
+    position: relative;
     @include tablet{
         padding-left: 32px;
     }
     @include desktop{
         
     }
+    &::before{
+    content: '';    
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    }
     &__text{
+        position: relative;
         @include desktop{
         width: 100%;
         max-width: 1200px;
         margin: auto;
+        
         }
     }
 }
@@ -216,8 +200,11 @@ li{
         padding-bottom: 16px;
         padding-right: 16px;
         width: 100%;
-        line-height: 24px;
+        line-height: 18px;
         color: $primary-color1;
+        @include tablet{
+            line-height: 24px;
+        }
         &--column{
             @include tablet{
             display: flex;
@@ -241,7 +228,7 @@ li{
 
         &--quote{
             font-family: Avenir600;
-            line-height: 32px;
+            line-height: 28px;
             font-size: 16px;    
             @include tablet{
             padding-left: 100px;
@@ -276,6 +263,7 @@ li{
     &__heading{
         padding-bottom: 16px;
         padding-left: 16px;
+        padding-top: 24px;
         color: $primary-color1;
         font-family: Avenir600;
         @include tablet{
@@ -294,6 +282,10 @@ li{
         padding-bottom: 16px;
         padding-right: 16px;
         width: 100%;
+        filter: grayscale(100%);
+        &:hover{
+            filter: grayscale(0%);
+        }
         @include tablet{
             width: 33.33%;
             padding-right: 24px;
@@ -368,6 +360,9 @@ li{
         }
         &--silver{
             color: #e1e1e1;
+        }
+        &--no-underline{
+            text-decoration: none;
         }
     }
     &__icons{

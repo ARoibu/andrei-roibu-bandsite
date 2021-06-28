@@ -93,6 +93,8 @@ li {
 @media (min-width: 1280px) {
   .nav__logo {
     padding-left: auto;
+    padding-bottom: 24px;
+    padding-top: 36px;
   }
 }
 .nav__list {
@@ -109,6 +111,11 @@ li {
     padding-top: 24px;
   }
 }
+@media (min-width: 1280px) {
+  .nav__list {
+    padding-top: 40px;
+  }
+}
 .nav__list--active {
   border-bottom: 4px solid #FFFFFF;
   width: 50%;
@@ -122,6 +129,11 @@ li {
     width: -moz-fit-content;
     width: fit-content;
     margin-right: 60px;
+  }
+}
+@media (min-width: 1280px) {
+  .nav__list--active {
+    border-bottom: 2px solid #FFFFFF;
   }
 }
 .nav__list--inactive {
@@ -141,22 +153,40 @@ li {
   padding-bottom: 16px;
   border-bottom: 4px solid #FFFFFF;
 }
+@media (min-width: 1280px) {
+  .nav__list--inactive:hover {
+    border-bottom: 2px solid #FFFFFF;
+  }
+}
 
 .hero {
-  background-image: url(../assets/images/hero-bio.jpg);
-  background-position: center;
-  background-size: cover;
   height: 60vw;
   padding-left: 16px;
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   color: #FFFFFF;
+  position: relative;
 }
 @media (min-width: 767px) {
   .hero {
     padding-left: 32px;
   }
+}
+.hero::before {
+  content: "";
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+}
+.hero__text {
+  position: relative;
 }
 @media (min-width: 1280px) {
   .hero__text {
@@ -202,8 +232,13 @@ li {
   padding-bottom: 16px;
   padding-right: 16px;
   width: 100%;
-  line-height: 24px;
+  line-height: 18px;
   color: #323232;
+}
+@media (min-width: 767px) {
+  .about__text {
+    line-height: 24px;
+  }
 }
 @media (min-width: 767px) {
   .about__text--column {
@@ -225,7 +260,7 @@ li {
 }
 .about__text--quote {
   font-family: Avenir600;
-  line-height: 32px;
+  line-height: 28px;
   font-size: 16px;
 }
 @media (min-width: 767px) {
@@ -261,6 +296,7 @@ li {
 .gallery__heading {
   padding-bottom: 16px;
   padding-left: 16px;
+  padding-top: 24px;
   color: #323232;
   font-family: Avenir600;
 }
@@ -283,6 +319,10 @@ li {
   padding-bottom: 16px;
   padding-right: 16px;
   width: 100%;
+  filter: grayscale(100%);
+}
+.gallery__images:hover {
+  filter: grayscale(0%);
 }
 @media (min-width: 767px) {
   .gallery__images {
@@ -366,6 +406,9 @@ li {
 }
 .footer__text--silver {
   color: #e1e1e1;
+}
+.footer__text--no-underline {
+  text-decoration: none;
 }
 .footer__icons {
   display: flex;

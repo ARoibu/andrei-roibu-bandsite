@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Avenir;
+    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+    font-family: Avenir600;
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+    font-family: Avenir700;
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+
+$primary-color1: #323232;
+$primary-color2: #AFAFAF;
+$primary-color3: #FFFFFF;
+
+$tablet-width: 767px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+        @content;
+    }   
+}
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }  
+}
+
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-align-center{
+    display: flex;
+    align-items: center;
+}
+@mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+}
