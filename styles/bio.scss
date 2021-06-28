@@ -90,7 +90,17 @@ li{
     background-color: $primary-color1;
     display: flex;
     flex-wrap: wrap;
-
+    // @include desktop{
+    //     margin: auto;
+    // }
+    @include desktop{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        }
+    &__background{
+        background-color: #323232;
+    }
     &__logo{
         @include flex-center;
         padding-top: 16px;
@@ -103,6 +113,9 @@ li{
             padding-left: 36px;
             padding-top: 24px
             
+        }
+        @include desktop{
+            padding-left: auto;
         }
     }
     &__list{
@@ -159,9 +172,24 @@ li{
     @include tablet{
         padding-left: 32px;
     }
+    @include desktop{
+        
+    }
+    &__text{
+        @include desktop{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        }
+    }
 }
 
 .about{
+    @include desktop{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        }
 
     &__heading{
         padding-bottom: 16px;
@@ -177,7 +205,7 @@ li{
     &__photo{
         padding: 0 16px 16px 16px;
         width: 100%;
-        height: 50vw;
+        max-height: 600px;
         @include tablet{
             padding-left: 100px;
             padding-right: 100px;
@@ -231,11 +259,19 @@ li{
 }
 
 .gallery{
+    &--gray{
+        background-color: #FAFAFA;
+    }
     @include tablet{
         display: flex;
         flex-wrap: wrap;
         padding-left: 32px;
         padding-right: 8px;
+        padding-bottom: 8px;
+    }
+    @include desktop{
+        max-width: 1200px;
+        margin: auto;
     }
     &__heading{
         padding-bottom: 16px;
@@ -244,7 +280,14 @@ li{
         font-family: Avenir600;
         @include tablet{
             padding-left: 32px;
+            padding-bottom: 24px;
+            padding-top: 60px;
         }
+        @include desktop{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            }
     }
     &__images{
         padding-left: 16px;
@@ -262,22 +305,66 @@ li{
 
 .footer{
     background-color: $primary-color1;
+    
     &__heading{
         padding-left: 16px;
         padding-top: 24px;
         padding-bottom: 16px;
         color: $primary-color3;
-        // @include tablet{
-        //     padding-left: 36px;
-        // }
+        @include tablet{
+            padding-left: 32px;
+            padding-top: 40px;
+            padding-bottom: 32px;
+        }
+    }
+    &__top{
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 32px;
+        }
+        @include desktop{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            }
+    }
+    &__contact{
+        @include tablet{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-right: 32px;
+        padding-left: 16px;
+        }
+        @include desktop{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding-right: 400px;
+            }
     }
     &__text{
         padding-left: 16px;
         width: 100%;
         padding-bottom: 16px;
         color: $primary-color3;
+        @include tablet{
+            // width: 33%;
+        }
+        @include desktop{
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            }
         &--small{
             font-size: 10px;
+            @include tablet{
+                font-size: 14px;
+                padding-left: 32px;
+                padding-top: 32px;
+                padding-bottom: 32px;
+            }
         }
         &--silver{
             color: #e1e1e1;
@@ -289,6 +376,11 @@ li{
         width: 140px;
         padding-left: 16px;
         padding-bottom: 24px;
+        @include tablet{
+            padding-top: 52px;
+            padding-left: 24px;
+            
+        }
     }
     &__logo{
         margin-left: 16px;
@@ -296,5 +388,21 @@ li{
         margin-top: 40px;
         max-width: 120px;
         max-height: 20px;
+        @include tablet{
+            display: none;
+        }
+    }
+    &__logo2{
+        display: none;
+        max-width: 120px;
+        max-height: 20px;
+        @include tablet{
+            display:block;
+            margin-top: 52px;
+            margin-left: 190px;
+        }
+        @include desktop{
+            margin-left: 560px;
+        }
     }
 }
