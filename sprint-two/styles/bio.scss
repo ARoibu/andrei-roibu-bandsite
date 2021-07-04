@@ -351,6 +351,39 @@ li{
         border: none;
         margin: 16px 0;
     }
+    &__wrapper{
+        margin-left: 16px;
+        // margin-right: 16px;
+        // margin-bottom: 16px;
+        // padding-bottom: 16px;
+        // border-bottom: 2px solid #e1e1e1;
+        width: calc(100% - (36px + 16px));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__text{
+    width: 100%;    
+    }
+    &__name{
+        font-size: 14px;
+    }
+    &__area{
+        display: flex;
+        margin: 0 16px;
+        border-bottom: 2px solid #e1e1e1;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+    &__submitted-avatar{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #e1e1e1;
+        background-size: cover;
+        padding-right: 20px;
+        // margin-top: 20px;
+    }
 }
 
 .footer{
