@@ -28,12 +28,11 @@ h2{
 h3{
     font-size: 14px;
     line-height: 22px;
-    // color: black;
+    
     @include tablet{
         font-size: 24px;
         line-height: 32px;
     }
-    // font-family: Avenir600;
 }
 p{
     font-size: 13px;
@@ -49,9 +48,7 @@ li{
     background-color: $primary-color1;
     display: flex;
     flex-wrap: wrap;
-    // @include desktop{
-    //     margin: auto;
-    // }
+   
     @include desktop{
         width: 100%;
         max-width: 1200px;
@@ -85,8 +82,6 @@ li{
         list-style: none;
         width: 100%;
         @include tablet{
-            // justify-content: left;
-            // align-items: center;
             width: 200px;
             margin-left: 80px;
             padding-top: 24px;
@@ -102,6 +97,8 @@ li{
             text-align: center;
             padding-bottom: 16px;
             font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
             @include tablet{
                 width: fit-content;
                 margin-right: 60px;
@@ -115,6 +112,7 @@ li{
             width: 50%;
             text-align: center;
             color: $primary-color2;
+            text-decoration: none;
             @include tablet{
                 width: fit-content;
             }
@@ -133,10 +131,11 @@ li{
 
 .hero{
     
-    height: 60vw;
+    height: 80vw;
     padding-left: 16px;
     margin-bottom: 24px;
-    @include flex-align-center;
+    padding-top: 24px;
+    padding-right: 16px;
     color: $primary-color3;
     position: relative;
     @include tablet{
@@ -147,7 +146,7 @@ li{
     }
     &::before{
     content: '';    
-    background-image: url(../assets/images/hero-bio.jpg);
+    background-image: url(../assets/images/hero-shows.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -159,12 +158,51 @@ li{
     }
     &__text{
         position: relative;
+        padding-top: 16px;
         @include desktop{
         width: 100%;
         max-width: 1200px;
         margin: auto;
         
         }
+    }
+}
+.shows{
+    margin-left: 16px;
+    margin-right: 16px;
+    &__heading{
+        font-size: 32px;
+        font-family: Avenir600;
+        margin-bottom: 20px;
+    }
+    &__area{
+        border-bottom: 2px solid #e1e1e1;
+        margin-bottom: 16px;
+    }
+    &__label{
+        display: none;
+        font-size: 10px;
+        color: #AFAFAF;
+    }
+    &__label2{
+        font-size: 10px;
+        color: #AFAFAF;
+    }
+    &__date{
+        font-family: Avenir600;
+        margin-bottom: 10px;
+    }
+    &__venue{
+        margin-bottom: 10px;
+    }
+    &__button{
+        height: 40px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: $primary-color1;
+        color: #FFFFFF;
+        border: none;
+        margin: 16px 0;
     }
 }
 
@@ -221,10 +259,7 @@ li{
             padding-top: 32px;
             }
         }
-        // @include tablet{
-        //     padding-left: 100px;
-        //     padding-right: 100px;
-        // }
+     
 
         &--quote{
             font-family: Avenir600;
@@ -296,21 +331,16 @@ li{
 }
 .comments{
     padding: 0 16px;
-    // &__heading{
-    //     // padding-left: 16px;
-    //     // padding-top: 16px;
-    // }
+    
     &__avatar{
         width: 36px;
         height: 36px;
         border-radius: 50%;
         background-color: #e1e1e1;
         background-image: url(../assets/images/Mohan-muruge.jpg);
-        // background-position: center;
         background-size: cover;
         padding-right: 20px;
         margin-top: 20px;
-        // margin-left: 16px;
     }
     &__label{
         font-size: 10px;
@@ -320,8 +350,6 @@ li{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        // padding-right: 16px;
-        // padding-left: 16px;
         border-bottom: 2px solid #e1e1e1;
         margin-bottom: 16px;
     }

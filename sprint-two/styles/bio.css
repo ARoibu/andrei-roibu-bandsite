@@ -122,6 +122,8 @@ li {
   text-align: center;
   padding-bottom: 16px;
   font-weight: 700;
+  text-decoration: none;
+  color: #FFFFFF;
 }
 @media (min-width: 767px) {
   .nav__list--active {
@@ -140,6 +142,7 @@ li {
   width: 50%;
   text-align: center;
   color: #AFAFAF;
+  text-decoration: none;
 }
 @media (min-width: 767px) {
   .nav__list--inactive {

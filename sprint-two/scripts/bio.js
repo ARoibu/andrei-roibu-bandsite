@@ -63,6 +63,11 @@ showComment(commentsArray);
 
 const submitForm = document.querySelector('.comments__form');
 
+// submitButton.addEventListener("click",
+// function(event) {
+//     document.getElementById('name').value='';
+//     document.getElementById('comment').value='';
+// });
 
 submitForm.addEventListener("submit", 
 function(event) {
@@ -74,4 +79,8 @@ const newObject = { name: name, comment: comment, date: date};
 commentsArray = [];
 commentsArray.unshift(newObject);
 showComment(commentsArray);
+document.getElementById('name').value='';
+document.getElementById('comment').value='';
 });
+
+

@@ -28,12 +28,11 @@ h2{
 h3{
     font-size: 14px;
     line-height: 22px;
-    // color: black;
+
     @include tablet{
         font-size: 24px;
         line-height: 32px;
     }
-    // font-family: Avenir600;
 }
 p{
     font-size: 13px;
@@ -49,9 +48,7 @@ li{
     background-color: $primary-color1;
     display: flex;
     flex-wrap: wrap;
-    // @include desktop{
-    //     margin: auto;
-    // }
+  
     @include desktop{
         width: 100%;
         max-width: 1200px;
@@ -85,8 +82,6 @@ li{
         list-style: none;
         width: 100%;
         @include tablet{
-            // justify-content: left;
-            // align-items: center;
             width: 200px;
             margin-left: 80px;
             padding-top: 24px;
@@ -102,6 +97,8 @@ li{
             text-align: center;
             padding-bottom: 16px;
             font-weight: 700;
+            text-decoration: none;
+            color: #FFFFFF;
             @include tablet{
                 width: fit-content;
                 margin-right: 60px;
@@ -115,6 +112,7 @@ li{
             width: 50%;
             text-align: center;
             color: $primary-color2;
+            text-decoration: none;
             @include tablet{
                 width: fit-content;
             }
@@ -296,21 +294,16 @@ li{
 }
 .comments{
     padding: 0 16px;
-    // &__heading{
-    //     // padding-left: 16px;
-    //     // padding-top: 16px;
-    // }
+
     &__avatar{
         width: 36px;
         height: 36px;
         border-radius: 50%;
         background-color: #e1e1e1;
         background-image: url(../assets/images/Mohan-muruge.jpg);
-        // background-position: center;
         background-size: cover;
         padding-right: 20px;
         margin-top: 20px;
-        // margin-left: 16px;
     }
     &__label{
         font-size: 10px;
@@ -320,8 +313,6 @@ li{
         display: flex;
         justify-content: space-between;
         width: 100%;
-        // padding-right: 16px;
-        // padding-left: 16px;
         border-bottom: 2px solid #e1e1e1;
         margin-bottom: 16px;
     }
@@ -353,10 +344,6 @@ li{
     }
     &__wrapper{
         margin-left: 16px;
-        // margin-right: 16px;
-        // margin-bottom: 16px;
-        // padding-bottom: 16px;
-        // border-bottom: 2px solid #e1e1e1;
         width: calc(100% - (36px + 16px));
         display: flex;
         flex-wrap: wrap;
@@ -382,7 +369,6 @@ li{
         background-color: #e1e1e1;
         background-size: cover;
         padding-right: 20px;
-        // margin-top: 20px;
     }
 }
 

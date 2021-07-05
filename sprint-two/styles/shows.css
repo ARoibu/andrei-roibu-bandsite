@@ -122,6 +122,8 @@ li {
   text-align: center;
   padding-bottom: 16px;
   font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 @media (min-width: 767px) {
   .nav__list--active {
@@ -140,6 +142,7 @@ li {
   width: 50%;
   text-align: center;
   color: #AFAFAF;
+  text-decoration: none;
 }
 @media (min-width: 767px) {
   .nav__list--inactive {
@@ -160,11 +163,11 @@ li {
 }
 
 .hero {
-  height: 60vw;
+  height: 80vw;
   padding-left: 16px;
   margin-bottom: 24px;
-  display: flex;
-  align-items: center;
+  padding-top: 24px;
+  padding-right: 16px;
   color: #FFFFFF;
   position: relative;
 }
@@ -175,7 +178,7 @@ li {
 }
 .hero::before {
   content: "";
-  background-image: url(../assets/images/hero-bio.jpg);
+  background-image: url(../assets/images/hero-shows.jpg);
   background-position: center;
   background-size: cover;
   position: absolute;
@@ -187,6 +190,7 @@ li {
 }
 .hero__text {
   position: relative;
+  padding-top: 16px;
 }
 @media (min-width: 1280px) {
   .hero__text {
@@ -194,6 +198,45 @@ li {
     max-width: 1200px;
     margin: auto;
   }
+}
+
+.shows {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.shows__heading {
+  font-size: 32px;
+  font-family: Avenir600;
+  margin-bottom: 20px;
+}
+.shows__area {
+  border-bottom: 2px solid #e1e1e1;
+  margin-bottom: 16px;
+}
+.shows__label {
+  display: none;
+  font-size: 10px;
+  color: #AFAFAF;
+}
+.shows__label2 {
+  font-size: 10px;
+  color: #AFAFAF;
+}
+.shows__date {
+  font-family: Avenir600;
+  margin-bottom: 10px;
+}
+.shows__venue {
+  margin-bottom: 10px;
+}
+.shows__button {
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #323232;
+  color: #FFFFFF;
+  border: none;
+  margin: 16px 0;
 }
 
 @media (min-width: 1280px) {
