@@ -20,6 +20,9 @@ let commentsArray = [
     },
 ];
 
+
+
+
 function showComment(object) {
     for (let i = 0; i < object.length; i++) {
         
@@ -63,17 +66,25 @@ showComment(commentsArray);
 
 const submitForm = document.querySelector('.comments__form');
 
-// submitButton.addEventListener("click",
-// function(event) {
-//     document.getElementById('name').value='';
-//     document.getElementById('comment').value='';
-// });
+
 
 submitForm.addEventListener("submit", 
 function(event) {
-event.preventDefault();
-const name = event.target.name.value;
-const comment = event.target.comment.value;
+  event.preventDefault();
+  const name = event.target.name.value;
+    const comment = event.target.comment.value;
+    if (name==='') {
+        event.target.name.classList.add('comments__field--error');
+       
+    }
+    if (comment==='') {
+        event.target.comment.classList.add('comments__field--error');
+
+    }
+    if (name !=='' && comment !=='') {
+
+event.target.name.classList = 'comments__field'
+event.target.comment.classList = "comments__field comments__field--text-area"
 const date = new Date();
 const newObject = { name: name, comment: comment, date: date};
 commentsArray = [];
@@ -81,6 +92,6 @@ commentsArray.unshift(newObject);
 showComment(commentsArray);
 document.getElementById('name').value='';
 document.getElementById('comment').value='';
-});
+}});
 
 

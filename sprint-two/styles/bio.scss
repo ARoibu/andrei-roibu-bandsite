@@ -219,10 +219,6 @@ li{
             padding-top: 32px;
             }
         }
-        // @include tablet{
-        //     padding-left: 100px;
-        //     padding-right: 100px;
-        // }
 
         &--quote{
             font-family: Avenir600;
@@ -293,8 +289,25 @@ li{
     }
 }
 .comments{
-    padding: 0 16px;
-
+    padding: 16px 16px;
+    @include tablet{
+        padding: 32px 100px;
+    }
+    @include desktop{
+        padding: 0;
+    }
+    &__heading{
+        padding-bottom: 16px;
+        @include tablet{
+            margin-left: -72px;
+        }
+        @include desktop{
+            padding: 24px;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+    }
     &__avatar{
         width: 36px;
         height: 36px;
@@ -315,10 +328,19 @@ li{
         width: 100%;
         border-bottom: 2px solid #e1e1e1;
         margin-bottom: 16px;
+        @include desktop{
+            width: 500px;
+            margin: auto;
+            margin-bottom: 16px;
+        }
     }
+
     &__form{
         width: calc(100% - (36px + 16px));
+      
     }
+    
+    
     &__field{
         height: 36px;
         width: 100%;
@@ -328,11 +350,25 @@ li{
         border: 1px solid #e1e1e1;
         background-color: #FAFAFA;
         resize: none;
+        outline: none;
+        &:focus{
+            border: 1px solid #323232;
+          
+        }
+        &::placeholder{
+            color: #323232;
+        }
         &--text-area{
             height: auto;
         }
+        &--error{
+            border-color: #d22d2d;
+        }
+        // &:focus:invalid{
+        //     border-color: #D22D2D;
+        // }
     }
-    
+   
     &__button{
         height: 40px;
         width: 100%;
@@ -341,6 +377,9 @@ li{
         color: #FFFFFF;
         border: none;
         margin: 16px 0;
+        &:hover{
+            background-color: #000000;
+        }
     }
     &__wrapper{
         margin-left: 16px;
@@ -361,6 +400,16 @@ li{
         border-bottom: 2px solid #e1e1e1;
         padding-bottom: 16px;
         margin-bottom: 16px;
+        @include tablet{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        @include desktop{
+            width:500px;
+            margin: auto;
+            margin-bottom: 16px;
+        }
+        
     }
     &__submitted-avatar{
         width: 36px;

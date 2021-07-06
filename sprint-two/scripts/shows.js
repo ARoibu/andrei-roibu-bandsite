@@ -104,6 +104,10 @@ function displayShow(object) {
         buttonElement.classList.add('shows__button');
         buttonElement.innerText = 'BUY TICKETS';
         articleElement.appendChild(buttonElement);
+        buttonElement.addEventListener("click",
+        function(event) {
+            console.log(showsVenue);
+        });
 
         showsArea.appendChild(articleElement);
     }
