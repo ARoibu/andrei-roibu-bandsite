@@ -6,23 +6,6 @@ const commentArea = document.querySelector('#comment-area');
 
 const submitButton = document.querySelector('.comments__button');
 
-// let commentsArray = [
-//     {
-//         name: 'Will Smif',
-//         comment: 'This is good stuff. I can totally get jiggy with this.',
-//         date: new Date('03/25/1995'),
-//     },
-//     {
-//         name: 'Ur Mom',
-//         comment: 'This really is the bees knees. Just the cats meow. Musics r totes kewl.',
-//         date: new Date('05/11/2010'),
-//     },
-//     {
-//         name: 'Spengbab Squerpantaloons',
-//         comment: "I can't wait to show this music to Patrec, Squid Guy, and Sando. Heheheheheh.",
-//         date: new Date('08/05/2020'),
-//     },
-// ];
 let commentsArray = [];
 axios
 .get(`https://project-1-api.herokuapp.com/comments?api_key=2844ad3d-8778-4d67-a742-43f9e43e3fd3`)
@@ -74,12 +57,7 @@ function displayComment(object) {
         commentArea.prepend(articleElement);
 }
 
-
-
-
 const submitForm = document.querySelector('.comments__form');
-
-
 
 submitForm.addEventListener("submit", 
 function(event) {
@@ -98,17 +76,10 @@ function(event) {
 
 event.target.name.classList = 'comments__field'
 event.target.comment.classList = "comments__field comments__field--text-area"
-// const date = new Date();
-// const newObject = { name: name, comment: comment, };
-// commentsArray = [];
-// commentArea.removeChild(articleElement);
-// commentsArray.push(newObject);
-// commentsArray.forEach(comment => {   
-//     displayComment(comment);
-// });
+const newObject = { name: name, comment: comment, };
+
 document.getElementById('name').value='';
 document.getElementById('comment').value='';
-
 
 axios.post(`https://project-1-api.herokuapp.com/comments?api_key=2844ad3d-8778-4d67-a742-43f9e43e3fd3`, newObject)
 .then((response) => {

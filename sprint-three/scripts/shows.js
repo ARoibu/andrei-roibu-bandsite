@@ -1,38 +1,5 @@
 const showsArea = document.querySelector('.shows');
 
-// let showsArray = [
-//     {
-//         date: 'Mon Sept 06 2021',
-//         venue: 'Ronald Lane',
-//         location: 'San Fransisco, CA',
-//     },
-//     {
-//         date: 'Tue Sept 21 2021',
-//         venue: 'Pier 3 East',
-//         location: 'San Fransisco, CA',
-//     },
-//     {
-//         date: 'Fri Oct 15 2021',
-//         venue: 'View Lounge',
-//         location: 'San Fransisco, CA',
-//     },
-//     {
-//         date: 'Sat Nov 06 2021',
-//         venue: 'Hyatt Agency',
-//         location: 'San Fransisco, CA',
-//     },
-//     {
-//         date: 'Fri Nov 26 2021',
-//         venue: 'Moscow Center',
-//         location: 'San Fransisco, CA',
-//     },
-//     {
-//         date: 'Wed Dec 15 2021',
-//         venue: 'Press Club',
-//         location: 'San Fransisco, CA',
-//     },
-// ];
-
 let showsArray = []
 
 function displayHeadings() {
@@ -79,7 +46,6 @@ showsArray.forEach(show => {
 });
 
 function displayShow(object) {
-    // for (let i = 0; i < object.length; i++) {
 
         let articleElement = document.createElement('article');
         articleElement.classList.add('shows__area');
